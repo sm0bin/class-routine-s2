@@ -16,7 +16,8 @@ const getClassById = async (req, res, next) => {
     try {
         const { id } = req.params;
         const classById = await Class.findById(id);
-        res.status(200).json(classById);
+        // res.status(200).json(classById);
+        res.send(classById);
     } catch (error) {
         next(error);
     }
@@ -43,7 +44,9 @@ const updateClass = async (req, res, next) => {
         );
         res.status(200).json(result);
     } catch (error) {
-        next(error);
+        // next(error);
+        res.status(500).json({ message: error.message });
+        console.log(error.message);
     }
 };
 
