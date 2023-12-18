@@ -62,7 +62,7 @@ const updateClass = async (req, res, next) => {
 module.exports = {
     getAllClasses,
     getClassById,
-    createClass,
+    // createClass,
     updateClass,
     // deleteClass
 };
